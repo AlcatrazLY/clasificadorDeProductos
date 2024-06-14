@@ -10,6 +10,7 @@ const nextConfig = {
             database: 'clasificadorBD'
         }
     },
+    
     publicRuntimeConfig: {
         apiUrl: process.env.NODE_ENV === 'development'
         ? `http://${process.env.API_DEV}/api` // development api
