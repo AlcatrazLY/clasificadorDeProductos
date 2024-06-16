@@ -20,7 +20,8 @@ async function getById(id) {
 
 
 async function create(params) {
-    let productName = params.productName
+    let productName = params.name
+    console.log("LOOKKKKOOOOO    " + params.name)
     productName = productName.trim();
     if (await db.Product.findOne({ where: { name: productName } })) {
         throw 'Nombre del producto "' + params.productName + '" ya existe';

@@ -1,6 +1,6 @@
 import getConfig from "next/config";
 import mysql from "mysql2/promise";
-import { Sequelize, DataType } from "sequelize";
+import { Sequelize, DataTypes } from "sequelize";
 
 const { serverRuntimeConfig } = getConfig();
 export const db = {
@@ -26,11 +26,11 @@ async function initialize() {
 
 function productModel(sequelize) {
     return sequelize.define('product', {
-        id: {type: DataType.INTEGER,primaryKey: true,autoIncrement: true},
-        name: {type: DataType.STRING,allowNull: false},
-        description: {type: DataType.STRING,allowNull: false},
-        price: {type: DataType.DECIMAL(10, 2),allowNull: false},
-        stock: {type: DataType.INTEGER,allowNull: false},
-        clase: {type: DataType.INTEGER,allowNull: false}, 
+        id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+        name: {type: DataTypes.STRING,allowNull: false},
+        description: {type: DataTypes.STRING,allowNull: false},
+        price: {type: DataTypes.DECIMAL(10, 2),allowNull: false},
+        stock: {type: DataTypes.INTEGER,allowNull: false},
+        clase: {type: DataTypes.STRING,allowNull: false}, 
     });
 }
